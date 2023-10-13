@@ -1,0 +1,60 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap'); */
+
+.navbar {
+	width: 100%;
+	height: 70px;
+	background-color: #3bb19b;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar h1 {
+	/* font-size: 2rem;
+	font-family: 'Jost', sans-serif; */
+	margin-top:10px;
+	color: white;
+	font-size: 25px;
+	margin-left: 20px;
+}
+.nav_links{
+	color: white;
+}
+.white_btn {
+	border: none;
+	outline: none;
+	padding: 12px 0;
+	background-color: white;
+	border-radius: 20px;
+	width: 120px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+/* Apply these styles to the parent container (ul) */
+.nav_links {
+	list-style: none; /* Remove default list bullet points */
+	display: flex; /* Use flexbox to arrange items in a row */
+	padding: 0; /* Remove default padding */
+  }
+  
+  /* Apply these styles to each list item (li) */
+.nav_links li {
+	margin-top: 20px;
+	padding-inline: 10px;
+	margin-right: 20px; /* Add some spacing between list items */
+  }
+  
+  /* Apply these styles to the links (a) within list items */
+  .nav_links li a {
+	text-decoration: none; /* Remove underline from links */
+	color: white; /* Set the text color to white */
+  }
+  
+  /* Optionally, add hover effect for links */
+  .nav_links li a:hover {
+	text-decoration: underline; /* Underline on hover (optional) */
+  }
+  
