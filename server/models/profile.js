@@ -15,6 +15,9 @@ const profileSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  phone:{
+    type: String,
+  },
   bio: {
     type: String,
   },

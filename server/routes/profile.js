@@ -49,11 +49,12 @@ router.patch('/edit-my-profile',validateToken, async (req, res) => {
     if (!profile) {
       return res.status(404).json({ message: 'Profile not found' });
     }
-    const { name, email, bio, website } = req.body;
+    const { name, email, bio, website, phone } = req.body;
     profile.name = name || profile.name;
     profile.email = email || profile.email;
     profile.bio = bio || profile.bio;
     profile.website = website || profile.website;
+    profile.phone = phone || profile.phone;
     await profile.save();
     res.status(200).json(profile);
   } catch (error) {

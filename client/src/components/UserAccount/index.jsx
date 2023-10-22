@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useEffect, useState}from 'react'
 import { Link } from "react-router-dom"; 
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import {FaUserEdit} from  'react-icons/fa';
@@ -13,19 +13,28 @@ import styles from "./styles.module.css";
 
 export const UserAccount = () => {
 
-// export const UserAccount = ({ userId }) => {
-  // const [profile, setProfile] = useState(null);
-
-  // useEffect(() => {
-  //   // Fetch user profile data upon login
-  //   axios.get(`/api/userProfile/${userId}`)
-  //     .then((response) => {
-  //       setProfile(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, [userId]);
+  const [userProfile, setUserProfile] = useState({
+    name: "",
+    email: "",
+    bio: "",
+    website: "",
+    phone: "",
+  })
+  useEffect(()=>{
+    const getProfile = async () => {
+      const url = "http://localhost:8080/api/profile/get-my-profile"; // Update the URL to your backend server running on port 8080
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const data = await response.json();
+      setUserProfile(data);
+    }
+    getProfile();
+  })
 
  
 
@@ -69,14 +78,14 @@ export const UserAccount = () => {
                       </span> */}
                       <h3 >
                       {/* {profile.name} */}
-                      Aditya Salkar
+                      {userProfile.name}
                     </h3>
                     </li>
                     <li className="mb-2 mb-xl-3 display-28">
                     <span className="display-26 text-secondary me-2 font-weight-600">
                         Phone:
                       </span>
-                      507 - 541 - 4567
+                      {userProfile.phone}
                     </li>
                     
                     <li className="mb-3 mb-xl-3 display-28">
@@ -84,14 +93,14 @@ export const UserAccount = () => {
                         Email:
                       </span>
                       {/* {profile.email} */}
-                      adityasalkar@1806
+                      {userProfile.email}
                     </li>
                     <li className="mb-3 mb-xl-3 display-28">
                       <span className="display-26 text-secondary me-2 font-weight-600">
                         Website:
                       </span>
                       {/* {profile.website} */}
-                      adityasalkar.com
+                      {userProfile.website}
                     </li>
                     <li className="display-28">
                       {/* <span className="display-26 text-secondary me-2 font-weight-600">
@@ -107,7 +116,7 @@ export const UserAccount = () => {
               
               <div className="mt-4" >
               <span className="display-26 text-secondary me-2 font-weight-600"> Bio:</span>
-               <p>no need</p>
+               <p>{userProfile.bio}</p>
               
              </div>
             </div>
