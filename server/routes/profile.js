@@ -2,6 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const Profile = require('../models/profile');
+const validateToken = require("../middlewares/validateToken");
+
 
 // Create a new profile
 router.post('/', async (req, res) => {
@@ -26,16 +28,38 @@ router.get('/', async (req, res) => {
 });
 
 // Get user profile data by user ID
-// router.get('/:userId', async (req, res) => {
-//   try {
-//     const profiles = await Profile.findOne({ user: req.params.userId });
-//     if (!profiles) {
-//       return res.status(404).json({ message: 'Profile not found' });
-//     }
-//     res.json(profiles);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ message: 'Server Error' });
-//   }
-// });
+router.get('/get-my-profile', validateToken, async (req, res) => {
+
+  try {
+    const profile = await Profile.findOne({ user: req.user._id });
+    if (!profile) {
+      return res.status(404).json({ message: 'Profile not found' });
+    }
+    res.status(200).json(profile);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
+
+router.patch('/edit-my-profile',validateToken, async (req, res) => { 
+  try {
+    const profile = await Profile.findOne({ user: req.user._id });
+    if (!profile) {
+      return res.status(404).json({ message: 'Profile not found' });
+    }
+    const { name, email, bio, website } = req.body;
+    profile.name = name || profile.name;
+    profile.email = email || profile.email;
+    profile.bio = bio || profile.bio;
+    profile.website = website || profile.website;
+    await profile.save();
+    res.status(200).json(profile);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
 module.exports = router;
