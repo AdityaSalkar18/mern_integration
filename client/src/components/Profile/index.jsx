@@ -54,7 +54,7 @@ const Profile = () => {
       setFormData(data);
     }
     getProfile();
-  })
+  },[])
   
 
   return (
