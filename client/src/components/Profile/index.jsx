@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 import styles from "./styles.module.css";
 
@@ -8,8 +7,8 @@ const Profile = () => {
     name: "",
     email: "",
     bio: "",
-
     website: "",
+    phone: ""
   });
   const [error, setError] = useState("");
 
@@ -21,10 +20,17 @@ const Profile = () => {
     e.preventDefault();
 
     try {
-      const url = "http://localhost:8080/api/profile"; // Update the URL to your backend server running on port 8080
-      const response = await axios.post(url, formData);
+      const url = "http://localhost:8080/api/profile/edit-my-profile"; // Update the URL to your backend server running on port 8080
+      const response = await fetch(url, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify(formData),
+      })
       console.log("Profile created:", response.data);
-      // You can add logic to redirect or display a success message here
+      alert("Profile updated successfully");
     } catch (error) {
       if (
         error.response &&
@@ -73,6 +79,14 @@ const Profile = () => {
           name="email"
           placeholder="Email"
           value={formData.email}
+          onChange={handleChange}
+          className={styles.input}
+        />
+        <input
+          type="text"
+          name="phone"
+          placeholder="phone"
+          value={formData.phone}
           onChange={handleChange}
           className={styles.input}
         />
