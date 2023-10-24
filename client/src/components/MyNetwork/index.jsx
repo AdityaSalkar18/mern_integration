@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link} from "react-router-dom"; 
+import NavbarS from '../Main';
 export const MyNetwork = () => {
   return (
     <div>
+      <NavbarS />
     <div class="list-group">
       <div class="list-group-item list-group-item-action d-flex gap-2 py-3" aria-current="true">
      
