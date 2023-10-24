@@ -9,6 +9,7 @@ import Startup from "./components/Startup";
 import Profile from "./components/Profile";
 import StartupView from "./components/StartupView";
 import MyNetwork from "./components/MyNetwork";
+import Notifi from "./components/Notifi";
 // import Main from "./components/Main";
 function App() {
 	const user = localStorage.getItem("token");
@@ -24,6 +25,7 @@ function App() {
 			<Route path="/startupaccount" exact element={<StartupAccount />} />
 			<Route path="/profile" exact element={<Profile />} />
 			<Route path="/mynetwork" exact element={<MyNetwork />} />
+			<Route path="/notifi" exact element={<Notifi />} />
 			<Route path="/startup" exact element={<Startup />} />
 			<Route path="/startupview/:id" exact element={<StartupView />} />
 			

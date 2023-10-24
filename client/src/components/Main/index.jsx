@@ -19,7 +19,7 @@ const NavbarS = () => {
       <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 navlink">
         <li><Link to="/" className="nav-link px-2 link-light">Home</Link></li>
         <li><Link to="/useraccount" className="nav-link px-2 link-light">Account</Link></li>
-        <li><Link to="#" className="nav-link px-2 link-light">Notification</Link></li>
+        <li><Link to="/notifi" className="nav-link px-2 link-light">Notification</Link></li>
         <li><Link to="/mynetwork" className="nav-link px-2 link-light">MyNetwork</Link></li>
       </ul>
       <div>

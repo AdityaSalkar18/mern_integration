@@ -13,6 +13,11 @@ import styles from "./styles.module.css";
 export const StartupView = () => {
   const { id } = useParams(); 
   const [startup, setStartup] = useState({});
+  const [isGrey, setIsGrey] = useState(false);
+
+  const handleClick = () => {
+    setIsGrey((prevIsGrey) => !prevIsGrey);
+  };
  
   useEffect(() => {
     const fetchData = async () => {
@@ -55,8 +60,13 @@ return (
                 <Link to="https://meet.google.com/"><SiGooglemeet /></Link>
               </li> 
               <li>
-                 <Link to="#"><AiOutlineUsergroupAdd /></Link>
-               </li> 
+                <Link to="#">
+                <AiOutlineUsergroupAdd
+                onClick={handleClick}
+                style={{ color: isGrey ? 'grey' : '#3bb19b' }}
+                />
+                </Link>
+              </li>
             
       </ul>
       
