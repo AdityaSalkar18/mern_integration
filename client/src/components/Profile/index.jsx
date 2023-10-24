@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 import styles from "./styles.module.css";
@@ -8,6 +8,7 @@ const Profile = () => {
     name: "",
     email: "",
     bio: "",
+
     website: "",
   });
   const [error, setError] = useState("");
@@ -36,6 +37,24 @@ const Profile = () => {
       }
     }
   };
+
+  
+
+  useEffect(()=>{
+    const getProfile = async () => {
+      const url = "http://localhost:8080/api/profile/get-my-profile"; // Update the URL to your backend server running on port 8080
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const data = await response.json();
+      setFormData(data);
+    }
+    getProfile();
+  },[])
   
 
   return (

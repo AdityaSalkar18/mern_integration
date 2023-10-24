@@ -95,6 +95,11 @@ const startupSchema = new mongoose.Schema({
  net: { 
     type: Number, 
  },
+ user: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: 'User', // Reference to the User model
+  required: true,
+},
   
 });
 

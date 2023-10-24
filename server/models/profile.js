@@ -2,28 +2,28 @@
 const mongoose = require('mongoose');
 
 const profileSchema = new mongoose.Schema({
-  // user: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'User', 
-  // },
+
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User', // Reference to the User model
+    required: true,
+  },
   name: {
     type: String,
-    required: true,
   },
   email: {
     type: String,
     required: true,
     unique: true,
   },
+  phone:{
+    type: String,
+  },
   bio: {
     type: String,
-    required: true,
-    unique: true,
   },
   website: {
     type: String,
-    required: true,
-    unique: true,
   }
   
 });

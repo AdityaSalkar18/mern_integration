@@ -10,11 +10,7 @@ const userSchema = new mongoose.Schema({
     // lastName: {type:String, required:true},
     userName: {type:String, required:true},
     email: {type:String, required:true,unique: true},
-    password: {type:String, required:true},
-    profile: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Profile', // Reference to the Profile model
-    },
+    password: {type:String, required:true}
 });
 
 userSchema.methods.generateAuthToken = function () {
