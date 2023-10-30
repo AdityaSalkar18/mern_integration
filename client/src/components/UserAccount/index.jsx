@@ -66,7 +66,7 @@ export const UserAccount = () => {
                     src="https://bootdey.com/img/Content/avatar/avatar7.png"
                     alt="..."
                   />
-                 <Link to="/profile"><FaUserEdit/></Link>
+                 <Link to="/profile" style={{ fontSize: '20px',}}><FaUserEdit/></Link>
                 </div>
                 <div className="col-lg-6 px-xl-10">
                  

@@ -37,18 +37,18 @@ export const StartupView = () => {
   }, [id]);
 return (
   <div>
-
+    <h1>StartupView</h1>
+  
+ <hr class="featurette-divider"/>
   <div>
-  <h1>StartupView</h1>
-  <hr class="featurette-divider"/>
-  <div class="container px-4 py-5">
+  <div class="container px-4 py-5" >
   {/* <h2 class="pb-2 border-bottom">Features with title</h2> */}
   
   <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
     <div class="col d-flex flex-column align-items-start gap-2">
       <h2 class="fw-bold text-body-emphasis">{startup.compname}</h2>
     
-      <p class="text-body-secondary">jhfsaihfisafas sahfoasofjop</p>
+      <p class="text-body-secondary">{startup.bio}</p>
       <ul className={styles.icon_links}>
               <li>
                 <Link to="https://mail.google.com/mail/u/0/?ogbl#inbox?compose=CllgCJTNqGFPCBxzlQzcdSBChjqHgtRlQDSlNLsJhndjVslcVRDcdJPrztZjFBmRsDNDrFXVpPL"><FiMail /></Link>
@@ -117,26 +117,27 @@ return (
     </div>
   </div>
 </div>
-<hr class="featurette-divider"/>
+
 
   <div class="container marketing px-4 py-5">
+    <p>Managment Team</p>
     <div class="row">
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-        <h4 class="fw-normal">Heading</h4>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+        
+        <h4 class="fw-normal">{startup.pone}</h4>
+        <p>{startup.pnone}</p>
         
       </div>
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-        <h4 class="fw-normal">Heading</h4>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+        
+        <h4 class="fw-normal">{startup.ptwo}</h4>
+        <p>{startup.pntwo}</p>
       
       </div>
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-        <h4 class="fw-normal">Heading</h4>
-        <p>And lastly this, the third column of representative placeholder content.</p>
+        
+        <h4 class="fw-normal">{startup.pthree}</h4>
+        <p>{startup.pnthree}</p>
         
       </div>
   </div>
@@ -152,7 +153,8 @@ return (
   <p class="lead">{startup.bdesc}</p>
 </div>
 <div class="col-md-5">
-  <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="400" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em"></text></svg>
+<img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="400" height="400" src="https://source.unsplash.com/400x400/?business" alt=""/>
+
 </div>
 </div>
 
@@ -249,7 +251,7 @@ return (
 
 
 <div class="container px-4 py-5" id="custom-cards">
- <h5>25 Jan 2023 To 06 Jun 2023 </h5>
+ <h5>{startup.tp}</h5>
  <p class="pb-2">{startup.fdesc} </p>
  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
     <div class="col">

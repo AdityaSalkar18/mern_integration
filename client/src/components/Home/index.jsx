@@ -35,7 +35,8 @@ export const Home = () => {
                 <Card.Img variant="top" style={{ height: '160px' }} src="https://source.unsplash.com/1600x600/?business" />
                 <Card.Body>
                   <Card.Title>{startup.compname}</Card.Title>
-                  <Card.Text>{startup.bdesc}</Card.Text>
+                  <Card.Text>{startup.bdesc.length > 100 ? `${startup.bdesc.slice(0, 100)}...` : startup.bdesc}</Card.Text>
+
                   <ul className={styles.icon_links}>
                     <li>
                       <Link to="https://mail.google.com/mail/u/0/?ogbl#inbox?compose=CllgCJTNqGFPCBxzlQzcdSBChjqHgtRlQDSlNLsJhndjVslcVRDcdJPrztZjFBmRsDNDrFXVpPL">

@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 
 const Startup = () => {
   const [formData, setFormData] = useState({
-    compname: "",eyear: "",cno: "",add: "", email: "", web: "", bio: "",mteam: "",bdesc: "",ps: "",tm: "",cp: "",sms: "",bm: "",mjc: "",cad: "",
+    compname: "",eyear: "",cno: "",add: "", email: "", web: "", bio: "",pone: "",pnone: "",ptwo: "",pntwo: "",pthree: "",pnthree: "",btitle: "",bdesc: "",ps: "",tm: "",cp: "",sms: "",bm: "",mjc: "",cad: "",
     tp: "",fdesc: "",rev: "",expen: "",net: "",
   });
   const [error, setError] = useState("");
@@ -21,6 +21,7 @@ const Startup = () => {
       const url = "http://localhost:8080/api/startup"; // Update the URL to your backend server running on port 8080
       const response = await axios.post(url, formData);
       console.log("Profile created:", response.data);
+      alert("startup profile shared ")
       // You can add logic to redirect or display a success message here
     } catch (error) {
       if (
@@ -55,7 +56,7 @@ const Startup = () => {
           className={styles.input}
         />
         <input
-          type="number"
+          type="text"
           name="cno"
           placeholder="Contact Number"
           value={formData.cno}
@@ -92,10 +93,51 @@ const Startup = () => {
           onChange={handleChange}
           className={styles.input}
         />
-        <textarea
-          name="mteam"
-          placeholder="Managment Team"
-          value={formData.mteam}
+        <input
+          type="text"
+          name="pone"
+          placeholder="Managment Team P1 "
+          value={formData.pone}
+          onChange={handleChange}
+          className={styles.input}
+        />
+        <input
+          type="text"
+          name="pnone"
+          placeholder="Managment Team P1 Name"
+          value={formData.pnone}
+          onChange={handleChange}
+          className={styles.input}
+        />
+        <input
+          type="text"
+          name="ptwo"
+          placeholder="Managment Team p2 "
+          value={formData.ptwo}
+          onChange={handleChange}
+          className={styles.input}
+        />
+        <input
+          type="text"
+          name="pntwo"
+          placeholder="Managment Team P2 Name"
+          value={formData.pntwo}
+          onChange={handleChange}
+          className={styles.input}
+        />
+        <input
+          type="text"
+          name="pthree"
+          placeholder="Managment Team P3"
+          value={formData.pthree}
+          onChange={handleChange}
+          className={styles.input}
+        />
+        <input
+          type="text"
+          name="pnthree"
+          placeholder="Managment Team P3 Name"
+          value={formData.pnthree}
           onChange={handleChange}
           className={styles.input}
         />
@@ -203,7 +245,7 @@ const Startup = () => {
           className={styles.input}
         />
         {error && <div className={styles.error_msg}>{error}</div>}
-        <button type="submit" className={styles.green_btn}>
+        <button type="submit" className={`${styles.green_btn}`}>
           Share Startup
         </button>
         

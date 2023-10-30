@@ -36,7 +36,7 @@ const NavbarS = () => {
           <li><Link to="#" className="dropdown-item">Settings</Link></li>
           <li><hr className="dropdown-divider" /></li>
           <li><Link to="/useraccount" className="dropdown-item">Account</Link></li>
-          <li><Link to="#" className="dropdown-item">Notification</Link></li>
+          <li><Link to="/notifi" className="dropdown-item">Notification</Link></li>
           <li><hr className="dropdown-divider" /></li>
           <li><Link to="#" className="dropdown-item" onClick={handleLogout}>Sign out</Link></li>
         </ul>

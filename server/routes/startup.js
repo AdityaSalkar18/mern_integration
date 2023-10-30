@@ -8,9 +8,9 @@ const Startup = require('../models/startup');
 router.post('/', async (req, res) => {
  
   try {
-    const { compname,eyear,cno,add, email,web, bio,mteam,btitle,bdesc,ps,tm,cp,sms,
+    const { compname,eyear,cno,add, email,web, bio,pone,pnone,ptwo,pntwo,pthree,pnthree,btitle,bdesc,ps,tm,cp,sms,
         bm,mjc,cad,tp,fdesc,rev,expen,net } = req.body;
-    const startup = new Startup({ compname,eyear,cno,add, email,web, bio,mteam,btitle,bdesc,ps,tm,cp,sms,
+    const startup = new Startup({ compname,eyear,cno,add, email,web, bio,pone,pnone,ptwo,pntwo,pthree,pnthree,btitle,bdesc,ps,tm,cp,sms,
         bm,mjc,cad,tp,fdesc,rev,expen,net });
     await startup.save();
     res.status(201).json(startup);

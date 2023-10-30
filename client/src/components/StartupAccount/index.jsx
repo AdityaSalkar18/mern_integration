@@ -11,24 +11,24 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import { MdEditSquare} from 'react-icons/md';
 import NavbarS from '../Main';
 
-import  { useEffect, useState } from 'react';
-import axios from 'axios';
+// import  { useEffect, useState } from 'react';
+// import axios from 'axios';
 
 export const StartupAccount = () => {
-  const [startupProfiles, setStartupProfiles] = useState([]);
+  // const [startupProfiles, setStartupProfiles] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('/api/startup'); // Use the correct API endpoint for startup profiles
-        setStartupProfiles(response.data);
-      } catch (error) {
-        console.error('Error fetching startup data:', error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get('/api/startup'); // Use the correct API endpoint for startup profiles
+  //       setStartupProfiles(response.data);
+  //     } catch (error) {
+  //       console.error('Error fetching startup data:', error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
   return (
     <div>
     <NavbarS/>
@@ -41,9 +41,9 @@ export const StartupAccount = () => {
     {/* <Link to="/startup"><MdEditSquare/></Link> */}
 
 
-    {Array.isArray(startupProfiles) && startupProfiles.length > 0 ? (
+    {/* {Array.isArray(startupProfiles) && startupProfiles.length > 0 ? (
         startupProfiles.map((startup) => (
-          <div key={startup._id}>
+          <div key={startup._id}> */}
             {/* <h2>Company Name: {startup.compname}</h2>
             <p>Email: {startup.email}</p>
             <p>Business Description: {startup.bdesc}</p> */}
@@ -57,9 +57,9 @@ export const StartupAccount = () => {
     
     <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
       <div class="col d-flex flex-column align-items-start gap-2">
-        <h2 class="fw-bold text-body-emphasis">{startup.compname}</h2>
-        <Link to="/startup"><MdEditSquare/></Link>
-        <p class="text-body-secondary">{startup.bdesc}</p>
+        <h2 class="fw-bold text-body-emphasis">Integration</h2>
+        <Link to="/startup" style={{ fontSize: '20px',}}><MdEditSquare/></Link>
+        <p class="text-body-secondary">Social Networking Site</p>
         <ul className={styles.icon_links}>
                 <li>
                   <Link to="https://mail.google.com/mail/u/0/?ogbl#inbox?compose=CllgCJTNqGFPCBxzlQzcdSBChjqHgtRlQDSlNLsJhndjVslcVRDcdJPrztZjFBmRsDNDrFXVpPL"><FiMail /></Link>
@@ -117,30 +117,30 @@ export const StartupAccount = () => {
               </svg> */}
             </div>
             <h4 class="fw-semibold mb-0 text-body-emphasis">Address</h4>
-            <p class="text-body-secondary">Sanket Square amalner</p>
+            <p class="text-body-secondary">Kalpataru Square </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <hr class="featurette-divider"/>
+
   
     <div class="container marketing px-4 py-5">
       <div class="row">
         <div class="col-lg-4">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+         
           <h4 class="fw-normal">Heading</h4>
           <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
           
         </div>
         <div class="col-lg-4">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+          
           <h4 class="fw-normal">Heading</h4>
           <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
         
         </div>
         <div class="col-lg-4">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+          
           <h4 class="fw-normal">Heading</h4>
           <p>And lastly this, the third column of representative placeholder content.</p>
           
@@ -291,11 +291,11 @@ export const StartupAccount = () => {
   </div>
             
           </div>
-        ))
-      ) : (
-        <p>No startup profiles found.</p>
-      )}
-    </div>
+      //   ))
+      // ) : (
+      //   <p>No startup profiles found.</p>
+      // )}
+    // </div>
     
   )
 }

@@ -14,7 +14,7 @@ const startupSchema = new mongoose.Schema({
     type: Number, 
  },
  cno: { 
-    type: Number, 
+    type: String, 
  },
  add: {
     type: String,
@@ -37,7 +37,27 @@ const startupSchema = new mongoose.Schema({
     type: String,
     
   },
-  mteam: {
+  pone: {
+    type: String,
+    
+  },
+  pnone: {
+    type: String,
+    
+  },
+  ptwo: {
+    type: String,
+    
+  },
+  pntwo: {
+    type: String,
+    
+  },
+  pthree: {
+    type: String,
+    
+  },
+  pnthree: {
     type: String,
     
   },
@@ -95,11 +115,6 @@ const startupSchema = new mongoose.Schema({
  net: { 
     type: Number, 
  },
- user: {
-  type: mongoose.Schema.Types.ObjectId,
-  ref: 'User', // Reference to the User model
-  required: true,
-},
   
 });
 

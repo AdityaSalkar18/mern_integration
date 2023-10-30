@@ -7,6 +7,7 @@ const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
 const profileRoutes = require('./routes/profile');
 const startupRoutes = require('./routes/startup');
+const notifiRoutes = require('./routes/notifi');
 // database connection
 connection();
 
@@ -19,6 +20,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/startup", startupRoutes);
+app.use("/api/notifi", notifiRoutes);
 
 
 const port = process.env.PORT || 8080;
